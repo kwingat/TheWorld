@@ -1,16 +1,19 @@
 // site.js
 
 (function() {
-    var ele = document.getElementById("username");
-    ele.innerHTML = "Shawn";
+    var $sidebarAndWrapper = $("#sidebar, #wrapper");
+    var $icon = $("#sidebarToggle i.fa");
+    $("#sidebarToggle")
+        .on("click",
+            function() {
+                $sidebarAndWrapper.toggleClass("hide-sidebar");
 
-    var main = document.getElementById("main");
-
-    main.onmouseenter = function () {
-        main.style = "background-color: #888;";
-    };
-
-    main.onmouseleave = function () {
-        main.style = "";
-    };
+                if ($sidebarAndWrapper.hasClass("hide-sidebar")) {
+                    $icon.removeClass("fa-angle-left");
+                    $icon.addClass("fa-angle-right");
+                } else {
+                    $icon.addClass("fa-angle-left");
+                    $icon.removeClass("fa-angle-right");
+                }
+            });
 })();

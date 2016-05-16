@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The World - @ViewBag.Title</title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="~/node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="~/node_modules/bootswatch/spacelab/bootstrap.css" />
+    <link rel="stylesheet" href="~/node_modules/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <div>
+        <div id="sidebar">
+            <img src="~/img/user.jpg" alt="headshot" class="headshot" />
+            <span id="username">Kyle Wingate</span>
+            <ul class="nav">
+                <li class="active"><a href="@Url.Action("Index", "App")">Home</a></li>
+                <li><a href="@Url.Action("About", "App")">About</a></li>
+                <li><a href="@Url.Action("Contact", "App")">Contact</a></li>
+            </ul>
+        </div>
+        <div id="wrapper">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <button id="sidebarToggle" class="btn btn-primary">
+                                <i class="fa fa-angle-left"></i>
+                            </button>
+                        </li>
+                    </ul>
+                    <a href="@Url.Action("Index", "App")" class="navbar-brand">The World</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="btn btn-sm btn-info">
+                                <i class="fa fa-save"></i> Save
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-sm btn-info">
+                                <i class="fa fa-print"></i> Print
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="main" class="container-fluid">
+                <div>
+                    
+                </div>
+                <div>
+                    @RenderBody()
+                </div>
+            </div>
+            <div id="footer" class="container-fluid">
+                <div class="navbar navbar-inverse navbar-fixed-bottom">
+                    <h4 class="text-center text-info">&copy; 2015 The World Ltd.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="~/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/js/site.js"></script>
+
+    @RenderSection("Scripts", false)
+
+</body>
+</html>
