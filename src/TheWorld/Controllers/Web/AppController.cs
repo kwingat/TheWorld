@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNet.Mvc;
 using TheWorld.Models;
@@ -19,8 +20,8 @@ namespace TheWorld.Controllers.Web
 
         public IActionResult Index()
         {
-            var trips = _context.Trips.OrderBy(t => t.Name).ToList();
-            return View();
+            List<Trip> trips = _context.Trips.OrderBy(t => t.Name).ToList();
+            return View(trips);
         }
 
         public IActionResult About()
