@@ -10,17 +10,17 @@ namespace TheWorld.Controllers.Web
     public class AppController : Controller
     {
         private readonly IMailService _mailService;
-        private readonly WorldContext _context;
+        private readonly IWorldRepository _worldRepository;
 
-        public AppController(IMailService mailService, WorldContext context)
+        public AppController(IMailService mailService, IWorldRepository worldRepository)
         {
             _mailService = mailService;
-            _context = context;
+            _worldRepository = worldRepository;
         }
 
         public IActionResult Index()
         {
-            List<Trip> trips = _context.Trips.OrderBy(t => t.Name).ToList();
+            var trips = _worldRepository.GetAllTrips();
             return View(trips);
         }
 
