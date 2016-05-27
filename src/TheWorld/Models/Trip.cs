@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.AspNet.Mvc.Routing;
+using TheWorld.ViewModels;
 
 namespace TheWorld.Models
 {

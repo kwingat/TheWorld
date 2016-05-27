@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace TheWorld.Models
 {
@@ -13,6 +14,13 @@ namespace TheWorld.Models
             _context = context;
         }
 
+
+/* Unmerged change from project 'TheWorld.DNX Core 5.0'
+Before:
+        public async Task EnsureSeedDataAsync()
+After:
+        public async Task EnsureSeedData()
+*/
         public void EnsureSeedData()
         {
             if (!_context.Trips.Any())
