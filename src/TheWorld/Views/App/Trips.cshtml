@@ -3,14 +3,17 @@
 @{
     ViewBag.Title = "Home Page";
 }
+@section Scripts
+{
+    <script src="~/node_modules/angular/angular.js"></script>
+}
 
 
-<h2>The World</h2>
-<p>This will be a fun website soon!</p>
 
-<div class="row">
+<div class="row" data-ng-app>
     <div class="col-md-6">
-        <h1>The World</h1>
+        <h2>The World</h2>
+        <p>This will be a fun website soon!</p>
         <form>
             <div class="form-group">
                 <label>Date</label>

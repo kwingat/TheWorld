@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>The World - @ViewBag.Title</title>
@@ -13,12 +13,21 @@
 <body>
     <div>
         <div id="sidebar">
-            <img src="~/img/user.jpg" alt="headshot" class="headshot" />
-            <span id="username">Kyle Wingate</span>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <img src="~/img/user.jpg" alt="headshot" class="headshot" />
+                <span id="username">Kyle Wingate</span>
+            }
+            
             <ul class="nav">
                 <li class="active"><a href="@Url.Action("Index", "App")">Home</a></li>
                 <li><a href="@Url.Action("About", "App")">About</a></li>
                 <li><a href="@Url.Action("Contact", "App")">Contact</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a href="@Url.Action("Trips", "App")">Trip</a></li>
+                    <li><a href="@Url.Action("Logout", "App")">Logout</a></li>
+                }
             </ul>
         </div>
         <div id="wrapper">
