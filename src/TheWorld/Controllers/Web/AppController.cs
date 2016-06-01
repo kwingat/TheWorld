@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Mvc;
 using TheWorld.Models;
@@ -62,7 +60,6 @@ namespace TheWorld.Controllers.Web
                     ModelState.Clear();
                 }
             }
-            
 
             return View();
         }
