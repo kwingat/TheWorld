@@ -1,0 +1,7 @@
+{
+	"name": "theworld",
+	"private": true,
+  "dependencies": {
+    "travelmap": "1.0.2"
+  }
+}
